@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="oficinas_y_mas.Views.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="../css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="../css/colors/default.css" id="theme" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="fix-header">
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <nav class="navbar navbar-default navbar-static-top m-b-0">
+                <div class="navbar-header">
+                    <div class="top-left-part">
+                        <!-- Logo -->
+                        <a class="logo" href="dashboard.html"></b>
+                        <!-- Logo text image you can use text also -->
+                            <span class="hidden-xs">
+
+                                <!--This is light logo text-->
+                                <img height="45px" src="../plugins/images/admin-text-dark.png" alt="home"
+                                    class="light-logo" />
+                            </span></a>
+                    </div>
+                    <!-- /Logo -->
+                    <ul class="nav navbar-top-links navbar-right pull-right">
+                        <li>
+                            <a class="nav-toggler open-close waves-effect waves-light hidden-md hidden-lg"
+                                href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+                        </li>
+                        <li>
+                            <div role="search" class="app-search hidden-sm hidden-xs m-r-10">
+                                <input type="text" placeholder="Search..." class="form-control">
+                                <a href=""><i
+                                    class="fa fa-search"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="profile-pic" id="lblUser" href="#" runat="server">
+                                <img src="../plugins/images/users/varun.jpg" alt="user-img"
+                                    width="36" class="img-circle"><b class="hidden-xs">Usuario</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-header -->
+                <!-- /.navbar-top-links -->
+                <!-- /.navbar-static-side -->
+            </nav>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav slimscrollsidebar">
+                    <div class="sidebar-head">
+                        <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span><span
+                            class="hide-menu">Navigation</span></h3>
+                    </div>
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="profile.html" class="waves-effect"><i class="fa fa-user fa-fw"
+                                aria-hidden="true"></i>Profile</a>
+                        </li>
+                        <li>
+                            <a href="admin.html" class="waves-effect"><i class="fa fa-user fa-fw"
+                                aria-hidden="true"></i>Usuarios</a>
+                        </li>
+                        <li>
+                            <a href="basic-table.html" class="waves-effect"><i class="fa fa-table fa-fw"
+                                aria-hidden="true"></i>Inventario</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row bg-title">
+                        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                            <h4 class="page-title" id="titleDate" runat="server">Jueves, 29 de Octubre de 2020  </h4>
+
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+             <footer class="footer text-center"></footer>
+        </div>
+    </form>
+    <script type="text/javascript">
+            function showModal() {
+                $(document).ready(function () {
+                    $("#my_modal").modal('show');
+                });
+            }
+            function showModal() {
+                $(document).ready(function () {
+                    $("#my_modal_insert").modal('show');
+                });
+            }
+    </script>
+</body>
+</html>

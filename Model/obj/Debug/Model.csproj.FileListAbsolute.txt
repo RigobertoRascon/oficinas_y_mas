@@ -1,0 +1,11 @@
+D:\Programming\shcool\web\oficinas_y_mas\Model\bin\Debug\Model.dll.config
+D:\Programming\shcool\web\oficinas_y_mas\Model\bin\Debug\Model.dll
+D:\Programming\shcool\web\oficinas_y_mas\Model\bin\Debug\Model.pdb
+D:\Programming\shcool\web\oficinas_y_mas\Model\bin\Debug\EntityFramework.dll
+D:\Programming\shcool\web\oficinas_y_mas\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programming\shcool\web\oficinas_y_mas\Model\bin\Debug\EntityFramework.xml
+D:\Programming\shcool\web\oficinas_y_mas\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programming\shcool\web\oficinas_y_mas\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Programming\shcool\web\oficinas_y_mas\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Programming\shcool\web\oficinas_y_mas\Model\obj\Debug\Model.dll
+D:\Programming\shcool\web\oficinas_y_mas\Model\obj\Debug\Model.pdb

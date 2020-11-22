@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="oficinasymasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Almacen">
+    <Key>
+      <PropertyRef Name="idAlmacen" />
+    </Key>
+    <Property Name="idAlmacen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Muebles" Relationship="Self.FK__Mueble__idAlmace__4BAC3F29" FromRole="Almacen" ToRole="Mueble" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Entregas" Relationship="Self.FK__Entrega__idClien__571DF1D5" FromRole="Cliente" ToRole="Entrega" />
+    <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__idClient__5165187F" FromRole="Cliente" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Entrega">
+    <Key>
+      <PropertyRef Name="idEntrega" />
+    </Key>
+    <Property Name="idEntrega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idMueble" Type="Int32" Nullable="false" />
+    <Property Name="idCliente" Type="Int32" Nullable="false" />
+    <Property Name="idPersonal" Type="Int32" Nullable="false" />
+    <Property Name="idPedido" Type="Int32" Nullable="false" />
+    <Property Name="detalles" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="fechaEntrega" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK__Entrega__idClien__571DF1D5" FromRole="Entrega" ToRole="Cliente" />
+    <NavigationProperty Name="Mueble" Relationship="Self.FK__Entrega__idMuebl__5629CD9C" FromRole="Entrega" ToRole="Mueble" />
+    <NavigationProperty Name="Pedido" Relationship="Self.FK__Entrega__idPedid__59063A47" FromRole="Entrega" ToRole="Pedido" />
+    <NavigationProperty Name="Personal" Relationship="Self.FK__Entrega__idPerso__5812160E" FromRole="Entrega" ToRole="Personal" />
+  </EntityType>
+  <EntityType Name="Mueble">
+    <Key>
+      <PropertyRef Name="idMueble" />
+    </Key>
+    <Property Name="idMueble" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idAlmacen" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Int32" />
+    <NavigationProperty Name="Almacen" Relationship="Self.FK__Mueble__idAlmace__4BAC3F29" FromRole="Mueble" ToRole="Almacen" />
+    <NavigationProperty Name="Entregas" Relationship="Self.FK__Entrega__idMuebl__5629CD9C" FromRole="Mueble" ToRole="Entrega" />
+    <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__idMueble__5070F446" FromRole="Mueble" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="idPedido" />
+    </Key>
+    <Property Name="idPedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idMueble" Type="Int32" Nullable="false" />
+    <Property Name="idCliente" Type="Int32" Nullable="false" />
+    <Property Name="detalles" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="Int32" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK__Pedido__idClient__5165187F" FromRole="Pedido" ToRole="Cliente" />
+    <NavigationProperty Name="Entregas" Relationship="Self.FK__Entrega__idPedid__59063A47" FromRole="Pedido" ToRole="Entrega" />
+    <NavigationProperty Name="Mueble" Relationship="Self.FK__Pedido__idMueble__5070F446" FromRole="Pedido" ToRole="Mueble" />
+  </EntityType>
+  <EntityType Name="Personal">
+    <Key>
+      <PropertyRef Name="idPersonal" />
+    </Key>
+    <Property Name="idPersonal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="area" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rol" Type="Int32" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Entregas" Relationship="Self.FK__Entrega__idPerso__5812160E" FromRole="Personal" ToRole="Entrega" />
+  </EntityType>
+  <Association Name="FK__Mueble__idAlmace__4BAC3F29">
+    <End Role="Almacen" Type="Self.Almacen" Multiplicity="1" />
+    <End Role="Mueble" Type="Self.Mueble" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacen">
+        <PropertyRef Name="idAlmacen" />
+      </Principal>
+      <Dependent Role="Mueble">
+        <PropertyRef Name="idAlmacen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entrega__idClien__571DF1D5">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Entrega" Type="Self.Entrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Entrega">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__idClient__5165187F">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entrega__idMuebl__5629CD9C">
+    <End Role="Mueble" Type="Self.Mueble" Multiplicity="1" />
+    <End Role="Entrega" Type="Self.Entrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mueble">
+        <PropertyRef Name="idMueble" />
+      </Principal>
+      <Dependent Role="Entrega">
+        <PropertyRef Name="idMueble" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entrega__idPedid__59063A47">
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
+    <End Role="Entrega" Type="Self.Entrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="idPedido" />
+      </Principal>
+      <Dependent Role="Entrega">
+        <PropertyRef Name="idPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entrega__idPerso__5812160E">
+    <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+    <End Role="Entrega" Type="Self.Entrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="idPersonal" />
+      </Principal>
+      <Dependent Role="Entrega">
+        <PropertyRef Name="idPersonal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__idMueble__5070F446">
+    <End Role="Mueble" Type="Self.Mueble" Multiplicity="1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mueble">
+        <PropertyRef Name="idMueble" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="idMueble" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="oficinasymasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Almacens" EntityType="Self.Almacen" />
+    <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+    <EntitySet Name="Entregas" EntityType="Self.Entrega" />
+    <EntitySet Name="Muebles" EntityType="Self.Mueble" />
+    <EntitySet Name="Pedidoes" EntityType="Self.Pedido" />
+    <EntitySet Name="Personals" EntityType="Self.Personal" />
+    <AssociationSet Name="FK__Mueble__idAlmace__4BAC3F29" Association="Self.FK__Mueble__idAlmace__4BAC3F29">
+      <End Role="Almacen" EntitySet="Almacens" />
+      <End Role="Mueble" EntitySet="Muebles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entrega__idClien__571DF1D5" Association="Self.FK__Entrega__idClien__571DF1D5">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Entrega" EntitySet="Entregas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__idClient__5165187F" Association="Self.FK__Pedido__idClient__5165187F">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Pedido" EntitySet="Pedidoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entrega__idMuebl__5629CD9C" Association="Self.FK__Entrega__idMuebl__5629CD9C">
+      <End Role="Mueble" EntitySet="Muebles" />
+      <End Role="Entrega" EntitySet="Entregas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entrega__idPedid__59063A47" Association="Self.FK__Entrega__idPedid__59063A47">
+      <End Role="Pedido" EntitySet="Pedidoes" />
+      <End Role="Entrega" EntitySet="Entregas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entrega__idPerso__5812160E" Association="Self.FK__Entrega__idPerso__5812160E">
+      <End Role="Personal" EntitySet="Personals" />
+      <End Role="Entrega" EntitySet="Entregas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__idMueble__5070F446" Association="Self.FK__Pedido__idMueble__5070F446">
+      <End Role="Mueble" EntitySet="Muebles" />
+      <End Role="Pedido" EntitySet="Pedidoes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
