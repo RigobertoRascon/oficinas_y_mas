@@ -30,7 +30,7 @@ namespace oficinas_y_mas.Views
                 };
                 var user = PersonalController.login(login);
                 Session["loginId"] = user.idPersonal;
-                Response.Redirect("users.aspx");
+                Response.Redirect("inventory.aspx");
             }
             catch (Exception ex)
             {

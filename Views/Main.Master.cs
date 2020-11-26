@@ -23,6 +23,11 @@ namespace oficinas_y_mas.Views
                 else
                 {
                     Personal user = PersonalController.searchUserById(Convert.ToInt32(loginId));
+                    if (user.rol != 0)
+                    {
+                        linkUsers.Visible = false;
+                        //Response.Redirect("inventory.aspx");
+                    }
                     lblUser.InnerText = user.nombre + " " + user.apellido;
                     titleDate.InnerText = DateTime.Now.ToString();
                 }
@@ -32,6 +37,22 @@ namespace oficinas_y_mas.Views
 
                 ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + ex.Message + "');", true); ;
             }
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Session["loginId"] = null;
+            Response.Redirect("login.aspx");
+        }
+
+        protected void linkUsers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("users.aspx");
+        }
+
+        protected void linkInventory_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("inventory.aspx");
         }
     }
 }
