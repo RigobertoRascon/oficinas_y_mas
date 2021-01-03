@@ -32,6 +32,7 @@ namespace oficinas_y_mas.Views
                 PersonalController.insertUser(user);
                 ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Nuevo usuario agregado');", true);
                 Response.Redirect("Users.aspx");
+                /*hola*/
             }
             catch (Exception ex)
             {
