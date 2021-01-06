@@ -80,6 +80,7 @@
     <Compile Include="Mueble.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="MuebleModel.cs" />
     <Compile Include="Pedido.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

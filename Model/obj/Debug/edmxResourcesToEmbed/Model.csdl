@@ -48,6 +48,7 @@
     <NavigationProperty Name="Almacen" Relationship="Self.FK__Mueble__idAlmace__4BAC3F29" FromRole="Mueble" ToRole="Almacen" />
     <NavigationProperty Name="Entregas" Relationship="Self.FK__Entrega__idMuebl__5629CD9C" FromRole="Mueble" ToRole="Entrega" />
     <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__idMueble__5070F446" FromRole="Mueble" ToRole="Pedido" />
+    <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Pedido">
     <Key>

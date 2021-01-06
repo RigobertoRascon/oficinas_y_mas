@@ -36,6 +36,7 @@
     <EntitySetMapping Name="Muebles">
       <EntityTypeMapping TypeName="oficinasymasModel.Mueble">
         <MappingFragment StoreEntitySet="Mueble">
+          <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="idMueble" ColumnName="idMueble" />
           <ScalarProperty Name="idAlmacen" ColumnName="idAlmacen" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
