@@ -13,6 +13,8 @@
     <EntitySetMapping Name="Clientes">
       <EntityTypeMapping TypeName="oficinasymasModel.Cliente">
         <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
           <ScalarProperty Name="idCliente" ColumnName="idCliente" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="direccion" ColumnName="direccion" />
@@ -36,6 +38,8 @@
     <EntitySetMapping Name="Muebles">
       <EntityTypeMapping TypeName="oficinasymasModel.Mueble">
         <MappingFragment StoreEntitySet="Mueble">
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="cantidad_stock" ColumnName="cantidad_stock" />
           <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="idMueble" ColumnName="idMueble" />
           <ScalarProperty Name="idAlmacen" ColumnName="idAlmacen" />

@@ -16,6 +16,8 @@
                             <asp:BoundField DataField="idMueble" HeaderText="ID" InsertVisible="False" ReadOnly="true" />
                             <asp:BoundField DataField="nombre" HeaderText="Nombre" InsertVisible="False" ReadOnly="true" />
                             <asp:BoundField DataField="color" HeaderText="Color" InsertVisible="False" ReadOnly="true" />
+                            <asp:BoundField DataField="categoria" HeaderText="Categoria" InsertVisible="False" ReadOnly="true" />
+                            <asp:BoundField DataField="cantidad_stock" HeaderText="Existencia" InsertVisible="False" ReadOnly="true" />
                             <asp:BoundField DataField="precio" HeaderText="Precio" InsertVisible="False" ReadOnly="true" />
                             <asp:TemplateField>
                                 <ItemTemplate>

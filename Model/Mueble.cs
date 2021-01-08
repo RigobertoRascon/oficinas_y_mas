@@ -27,6 +27,8 @@ namespace Model
         public string color { get; set; }
         public Nullable<int> precio { get; set; }
         public string image { get; set; }
+        public int cantidad_stock { get; set; }
+        public string categoria { get; set; }
     
         public virtual Almacen Almacen { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

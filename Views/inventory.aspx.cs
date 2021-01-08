@@ -19,7 +19,7 @@ namespace oficinas_y_mas.Views
 
         protected void btnInsert_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("insert_product.aspx");
         }
 
         protected void btnEdit_Command(object sender, CommandEventArgs e)

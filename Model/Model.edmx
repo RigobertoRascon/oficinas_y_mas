@@ -21,6 +21,8 @@
           <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="direccion" Type="varchar" MaxLength="350" Nullable="false" />
           <Property Name="correo" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="apellido" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Entrega">
           <Key>
@@ -44,6 +46,8 @@
           <Property Name="color" Type="varchar" MaxLength="50" />
           <Property Name="precio" Type="int" />
           <Property Name="image" Type="varchar" MaxLength="100" />
+          <Property Name="cantidad_stock" Type="int" Nullable="false" />
+          <Property Name="categoria" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Pedido">
           <Key>
@@ -212,6 +216,8 @@
           <Property Name="correo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Entregas" Relationship="Self.FK__Entrega__idClien__571DF1D5" FromRole="Cliente" ToRole="Entrega" />
           <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__idClient__5165187F" FromRole="Cliente" ToRole="Pedido" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Entrega">
           <Key>
@@ -242,6 +248,8 @@
           <NavigationProperty Name="Entregas" Relationship="Self.FK__Entrega__idMuebl__5629CD9C" FromRole="Mueble" ToRole="Entrega" />
           <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__idMueble__5070F446" FromRole="Mueble" ToRole="Pedido" />
           <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cantidad_stock" Type="Int32" Nullable="false" />
+          <Property Name="categoria" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Pedido">
           <Key>
@@ -409,6 +417,8 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="oficinasymasModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
@@ -432,6 +442,8 @@
           <EntitySetMapping Name="Muebles">
             <EntityTypeMapping TypeName="oficinasymasModel.Mueble">
               <MappingFragment StoreEntitySet="Mueble">
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="cantidad_stock" ColumnName="cantidad_stock" />
                 <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="idMueble" ColumnName="idMueble" />
                 <ScalarProperty Name="idAlmacen" ColumnName="idAlmacen" />

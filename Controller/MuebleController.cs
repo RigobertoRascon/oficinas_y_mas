@@ -13,9 +13,14 @@ namespace Controller
 		{
 			try
 			{
-				if (string.IsNullOrEmpty(newMueble.nombre) || string.IsNullOrEmpty(newMueble.color) || newMueble.precio == 0)
+				if ( string.IsNullOrEmpty(newMueble.nombre) || string.IsNullOrEmpty(newMueble.color) || string.IsNullOrEmpty(newMueble.precio.ToString())
+				|| string.IsNullOrEmpty(newMueble.cantidad_stock.ToString()) )
 				{
 					throw new Exception("Introduzca todos los campos");
+				}
+				else
+				{
+					MuebleModel.insertMueble(newMueble);
 				}
 			}
 			catch (Exception ex)
@@ -30,7 +35,8 @@ namespace Controller
 			try
 			{
 
-				if (muebleToUpdate.idMueble > 0 && !string.IsNullOrEmpty(muebleToUpdate.nombre) && !string.IsNullOrEmpty(muebleToUpdate.color) && !string.IsNullOrEmpty(muebleToUpdate.precio.ToString()))
+				if ( muebleToUpdate.idMueble > 0 && !string.IsNullOrEmpty(muebleToUpdate.nombre) && !string.IsNullOrEmpty(muebleToUpdate.color) && !string.IsNullOrEmpty(muebleToUpdate.precio.ToString())
+				&& !string.IsNullOrEmpty(muebleToUpdate.cantidad_stock.ToString()) )
 				{
 					MuebleModel.updateMueble(muebleToUpdate);
 				}
@@ -69,27 +75,6 @@ namespace Controller
 			{
 
 				throw ex;
-			}
-		}
-
-		public static void editMueble(Mueble modifiedMueble)
-		{
-			try
-			{
-
-				if (modifiedMueble.idMueble > 0 && !string.IsNullOrEmpty(modifiedMueble.nombre) && !string.IsNullOrEmpty(modifiedMueble.color) 
-					&& !string.IsNullOrEmpty(modifiedMueble.precio.ToString()))
-				{
-					MuebleModel.editMueble(modifiedMueble);
-				}
-				else
-				{
-					throw new Exception("Datos inválidos");
-				}
-			}
-			catch (Exception ex)
-			{
-				throw new Exception("Hubo un error en la capa del Modelo: " + ex.Message.ToString());
 			}
 		}
 

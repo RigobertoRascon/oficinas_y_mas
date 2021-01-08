@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="edit_product.aspx.cs" Inherits="oficinas_y_mas.Views.edit_product" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="insert_product.aspx.cs" Inherits="oficinas_y_mas.Views.insert_product" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -10,7 +9,7 @@
                     <img runat="server" class="w-50" alt="" src="">
                     <div class="overlay-box">
                                     <div class="user-content">
-                                        <a href="javascript:void(0)"><img id= "imgMueble" alt="Sin imagen" runat="server" src="../plugins/images/users/genu.jpg"
+                                        <a href="javascript:void(0)"><img id= "imgMueble" alt="Sin imagen" runat="server" src=""
                                                 class="thumb-lg"></a>
                                     </div>
                                 </div>
@@ -26,8 +25,7 @@
             </div>
         </div>
         <div class="form-group float-right">
-            <asp:Button Text="Cancelar" runat="server" ID="btnCancel" CssClass="btn" OnClick="btnCancel_Click"/>
-            <asp:Button Text="Guardar" runat="server" ID="btnUploadPhoto" CssClass="btn btn-success" OnClick="btnUploadPhoto_Click"/>
+            
         </div>
         </div>
         <div class="col-md-8">
@@ -65,7 +63,8 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <asp:Button Text="Editar" ID="btnEdit" OnClick="btnEdit_Click" CssClass="btn btn-success" runat="server" />
+                            <asp:Button Text="Cancelar" runat="server" ID="btnCancel" CssClass="btn" OnClick="btnCancel_Click"/>
+                            <asp:Button Text="Insertar" ID="btnEdit" OnClick="btnEdit_Click" CssClass="btn btn-success" runat="server" />
                         </div>
                     </div>
                 </div>

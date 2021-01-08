@@ -56,6 +56,8 @@ namespace Model
 					mueble.color = muebleToUpdate.color;
 					mueble.precio = muebleToUpdate.precio;
 					mueble.image = muebleToUpdate.image;
+					mueble.cantidad_stock = muebleToUpdate.cantidad_stock;
+					mueble.categoria = muebleToUpdate.categoria;
 					model.SaveChanges(); 
 				}
 			}
@@ -72,28 +74,8 @@ namespace Model
 				using (var model = new oficinasymasEntities())
 				{
 					List<Mueble> result = model.Muebles.Where(mueble => (mueble.nombre.Contains(criteria)
-						 || mueble.color.Contains(criteria))).ToList();
+						 || mueble.color.Contains(criteria) || mueble.categoria.Contains(criteria))).ToList();
 					return result;
-				}
-			}
-			catch (Exception ex)
-			{
-
-				throw ex;
-			}
-		}
-
-		public static void editMueble(Mueble modifiedMueble)
-		{
-			try
-			{
-				using (var model = new oficinasymasEntities())
-				{
-					Mueble mueble = model.Muebles.Find(modifiedMueble.idMueble);
-					mueble.nombre = modifiedMueble.nombre;
-					mueble.color = modifiedMueble.color;
-					mueble.precio = modifiedMueble.precio;
-					model.SaveChanges();
 				}
 			}
 			catch (Exception ex)
