@@ -27,7 +27,6 @@
         </div>
         <div class="form-group float-right">
             <asp:Button Text="Cancelar" runat="server" ID="btnCancel" CssClass="btn" OnClick="btnCancel_Click"/>
-            <asp:Button Text="Guardar" runat="server" ID="btnUploadPhoto" CssClass="btn btn-success" OnClick="btnUploadPhoto_Click"/>
         </div>
         </div>
         <div class="col-md-8">
