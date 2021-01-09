@@ -27,14 +27,14 @@ namespace oficinas_y_mas.Views
                     txtLastname.Attributes.Add("placeholder", user.apellido);
                     txtPhone.Attributes.Add("placeholder", user.telefono);
                     txtEmail.Attributes.Add("placeholder", user.correo);
-                    userArea.SelectedValue = user.area;
-                    userRole.SelectedValue = 1.ToString();
+                    txtPassword.Attributes.Add("placeholder", user.password);
+                    userArea.SelectedValue = user.area.ToString();
+                    userRole.SelectedValue = user.rol.ToString();
                 }
             }
 			catch (Exception ex)
 			{
-
-                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + ex.Message + "');", true); ;
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + ex.Message + "');", true); 
             }
         }
 
@@ -63,13 +63,12 @@ namespace oficinas_y_mas.Views
                 user.area = "Administracion";
                 user.rol = 1;
                 PersonalController.editUser(user);
-                //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Modificacion realizada');", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Modificacion realizada');", true);
                 Response.Redirect("Users.aspx");
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + ex.Message + "');", true);
             }
         }
     }
