@@ -16,6 +16,8 @@
     <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="direccion" Type="varchar" MaxLength="350" Nullable="false" />
     <Property Name="correo" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" />
+    <Property Name="apellido" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Entrega">
     <Key>
@@ -38,6 +40,9 @@
     <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="color" Type="varchar" MaxLength="50" />
     <Property Name="precio" Type="int" />
+    <Property Name="image" Type="varchar" MaxLength="100" />
+    <Property Name="cantidad_stock" Type="int" Nullable="false" />
+    <Property Name="categoria" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="Pedido">
     <Key>

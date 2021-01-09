@@ -26,28 +26,36 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-md-12">Contraseña</label>
+                        <div class="col-md-12">
+                            <asp:TextBox runat="server" ID="txtPassword" CssClass="form-control form-control-line" />
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-md-12">Telefono</label>
                         <div class="col-md-12">
                             <asp:TextBox runat="server" ID="txtPhone" CssClass="form-control form-control-line" />
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label class="col-sm-12">Area</label>
                         <div class="col-sm-12">
                             <br />
                             <asp:DropDownList ID="userArea" runat="server" CssClass="form-control form-control-line">
-                                <asp:ListItem Enabled="true" Text="Selecciona el rol de usuario" Value="9"></asp:ListItem>
-                                <asp:ListItem Text="Administracion" Value="Administracion"></asp:ListItem>
-                                <asp:ListItem Text="Ventas" Value="Ventas"></asp:ListItem>
+                                <asp:ListItem Enabled="true" Text="Selecciona el Area" value="0"></asp:ListItem>
+                                <asp:ListItem Text="Administracion" Value="0"></asp:ListItem>
+                                <asp:ListItem Text="Ventas" Value="1"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label class="col-sm-12">Rol</label>
                         <div class="col-sm-12">
                             <br />
                             <asp:DropDownList ID="userRole" runat="server" CssClass="form-control form-control-line">
-                                <asp:ListItem Enabled="true" Text="Selecciona el rol de usuario" Value="9"></asp:ListItem>
+                                <asp:ListItem Enabled="true" Text="Selecciona el Rol" Value="0"></asp:ListItem>
                                 <asp:ListItem Text="Administrador" Value="0"></asp:ListItem>
                                 <asp:ListItem Text="Usuario" Value="1"></asp:ListItem>
                             </asp:DropDownList>

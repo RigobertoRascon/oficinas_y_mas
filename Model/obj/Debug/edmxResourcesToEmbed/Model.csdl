@@ -19,6 +19,8 @@
     <Property Name="correo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Entregas" Relationship="Self.FK__Entrega__idClien__571DF1D5" FromRole="Cliente" ToRole="Entrega" />
     <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__idClient__5165187F" FromRole="Cliente" ToRole="Pedido" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Entrega">
     <Key>
@@ -48,6 +50,9 @@
     <NavigationProperty Name="Almacen" Relationship="Self.FK__Mueble__idAlmace__4BAC3F29" FromRole="Mueble" ToRole="Almacen" />
     <NavigationProperty Name="Entregas" Relationship="Self.FK__Entrega__idMuebl__5629CD9C" FromRole="Mueble" ToRole="Entrega" />
     <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__idMueble__5070F446" FromRole="Mueble" ToRole="Pedido" />
+    <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad_stock" Type="Int32" Nullable="false" />
+    <Property Name="categoria" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Pedido">
     <Key>

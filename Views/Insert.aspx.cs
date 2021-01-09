@@ -25,19 +25,20 @@ namespace oficinas_y_mas.Views
                 user.nombre = txtName.Text;
                 user.apellido = txtLastname.Text;
                 user.telefono = txtPhone.Text;
-                user.correo = txtEmail.Text;
-                user.area = "Administracion";
-                user.password = "topo1234";
+                user.correo = txtEmail.Text;                
+                user.password = txtPassword.Text;
+
+                user.area = userArea.SelectedValue;
                 user.rol = Convert.ToInt32(userRole.SelectedValue);
+                
                 PersonalController.insertUser(user);
                 ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Nuevo usuario agregado');", true);
                 Response.Redirect("Users.aspx");
-                /*hola*/
+                
             }
             catch (Exception ex)
             {
-
-                throw ex;//ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + ex.Message + "');", true); ;
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + ex.Message + "');", true);
             }
         }
     }
