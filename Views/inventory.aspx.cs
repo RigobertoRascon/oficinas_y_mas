@@ -30,9 +30,15 @@ namespace oficinas_y_mas.Views
 
         protected void btnDelete_Command(object sender, CommandEventArgs e)
         {
-            var idMuebleToRemove = Convert.ToInt32(e.CommandArgument);
-            PersonalController.removeUser(idMuebleToRemove);
-            Page_Load(null, null);
+            Session["idMuebleToDelete"] = Convert.ToInt32(e.CommandArgument);
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+
+        }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+            MuebleController.removeMueble(Convert.ToInt32(Session["idMuebleToDelete"]));
+            Response.Redirect("inventory.aspx");
         }
     }
 }

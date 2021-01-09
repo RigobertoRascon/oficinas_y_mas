@@ -42,4 +42,23 @@
             </div>
         </div>
     </div>
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Seguro que deseas eliminar a este usuario?</p>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button Text="Confirmar" runat="server" CssClass="btn btn-primary" ID="btnConfirm" OnClick="btnConfirm_Click"/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
