@@ -33,7 +33,7 @@ namespace oficinas_y_mas.Views
             mueble.idAlmacen = 1;
             MuebleController.insertMueble(mueble);
 
-            var savePath = @"D:\Programming\shcool\web\oficinas_y_mas\assets\images\muebles\";
+            var savePath = @"D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\assets\images\muebles";
             if (FileUpload.HasFile)
             {
                 string extension = System.IO.Path.GetExtension(FileUpload.FileName);
