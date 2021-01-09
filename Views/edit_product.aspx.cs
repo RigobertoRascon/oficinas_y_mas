@@ -28,6 +28,7 @@ namespace oficinas_y_mas.Views
                     txtName.Attributes.Add("placeholder", mueble.nombre);
                     txtColor.Attributes.Add("placeholder", mueble.color);
                     txtCategoria.Attributes.Add("placeholder", mueble.categoria);
+                    txtAlmacen.Attributes.Add("placeholder", "Almacen 1");
                     txtPrecio.Attributes.Add("placeholder", mueble.precio.ToString());
                     txtCantidad.Attributes.Add("placeholder", mueble.cantidad_stock.ToString());
                     imgMueble.Src = "../assets/images/muebles/" + mueble.image;
@@ -56,7 +57,7 @@ namespace oficinas_y_mas.Views
                 }
                 if (!string.IsNullOrEmpty(txtCategoria.Text))
                 {
-                    mueble.color = txtCategoria.Text;
+                    mueble.categoria = txtCategoria.Text;
                 }
                 if (!string.IsNullOrEmpty(txtPrecio.Text))
                 {
@@ -64,7 +65,7 @@ namespace oficinas_y_mas.Views
                 }
                 if (!string.IsNullOrEmpty(txtCantidad.Text))
                 {
-                    mueble.precio = Convert.ToInt32(txtPrecio.Text);
+                    mueble.cantidad_stock = Convert.ToInt32(txtPrecio.Text);
                 }
                 MuebleController.updateMueble(mueble);
                 ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Modificacion realizada');", true);

@@ -13,7 +13,7 @@ namespace oficinas_y_mas.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtAlmacen.Attributes.Add("placeholder", "Almacen 1");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

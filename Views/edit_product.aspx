@@ -52,6 +52,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-md-12">Almacen</label>
+                        <div class="col-md-12">
+                            <asp:TextBox runat="server" ReadOnly="true" ID="txtAlmacen" style="cursor :not-allowed" CssClass="form-control form-control-line" />
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="example-email" class="col-md-12">Precio</label>
                         <div class="col-md-12">
                             <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control form-control-line" />
