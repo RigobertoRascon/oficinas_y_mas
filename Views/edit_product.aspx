@@ -27,7 +27,6 @@
         </div>
         <div class="form-group float-right">
             <asp:Button Text="Cancelar" runat="server" ID="btnCancel" CssClass="btn" OnClick="btnCancel_Click"/>
-            <asp:Button Text="Guardar" runat="server" ID="btnUploadPhoto" CssClass="btn btn-success" OnClick="btnUploadPhoto_Click"/>
         </div>
         </div>
         <div class="col-md-8">
@@ -49,6 +48,12 @@
                         <label class="col-md-12">Categoria</label>
                         <div class="col-md-12">
                             <asp:TextBox runat="server" ID="txtCategoria" CssClass="form-control form-control-line" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Almacen</label>
+                        <div class="col-md-12">
+                            <asp:TextBox runat="server" ReadOnly="true" ID="txtAlmacen" style="cursor :not-allowed" CssClass="form-control form-control-line" />
                         </div>
                     </div>
                     <div class="form-group">

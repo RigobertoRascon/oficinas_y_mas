@@ -28,6 +28,7 @@ namespace oficinas_y_mas.Views
                     txtName.Attributes.Add("placeholder", mueble.nombre);
                     txtColor.Attributes.Add("placeholder", mueble.color);
                     txtCategoria.Attributes.Add("placeholder", mueble.categoria);
+                    txtAlmacen.Attributes.Add("placeholder", "Almacen 1");
                     txtPrecio.Attributes.Add("placeholder", mueble.precio.ToString());
                     txtCantidad.Attributes.Add("placeholder", mueble.cantidad_stock.ToString());
                     imgMueble.Src = "../assets/images/muebles/" + mueble.image;
@@ -64,11 +65,47 @@ namespace oficinas_y_mas.Views
                 }
                 if (!string.IsNullOrEmpty(txtCantidad.Text))
                 {
-                    mueble.cantidad_stock = Convert.ToInt32(txtCantidad.Text);
+                    mueble.cantidad_stock = Convert.ToInt32(txtPrecio.Text);
                 }
-                MuebleController.updateMueble(mueble);
-                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Modificacion realizada');", true);
-                Response.Redirect("inventory.aspx");
+                var savePath = @"D:\Programming\shcool\web\oficinas_y_mas\assets\images\muebles\";
+                if (FileUpload.HasFile)
+                {
+                    string extension = System.IO.Path.GetExtension(FileUpload.FileName);
+
+                    if (extension == ".jpg" || extension == ".png")
+                    {
+                        if (extension == ".jpg")
+                        {
+                            var fileName = mueble.idMueble + ".jpg";
+                            savePath += fileName;
+                            FileUpload.SaveAs(savePath);
+                            mueble.image = mueble.idMueble + ".jpg";
+
+                        }
+                        if (extension == ".png")
+                        {
+                            var fileName = mueble.idMueble + ".png";
+                            savePath += fileName;
+                            FileUpload.SaveAs(savePath);
+                            mueble.image = mueble.idMueble + ".png";
+                        }
+                        MuebleController.updateMueble(mueble);
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Modificacion realizada');", true);
+                        Response.Redirect("inventory.aspx");
+                    }
+                    else
+                    {
+                        lblWarning.InnerText = "Archivo no válido. Seleccione archivos con extensión .jpg o .png";
+                        lblWarning.Visible = true;
+                    }
+                }
+                else
+                {
+                    MuebleController.updateMueble(mueble);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Modificacion realizada');", true);
+                    Response.Redirect("inventory.aspx");
+                }
+                
             }
             catch (Exception ex)
             {
@@ -80,43 +117,6 @@ namespace oficinas_y_mas.Views
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("inventory.aspx");
-        }
-
-        protected void btnUploadPhoto_Click(object sender, EventArgs e)
-        {
-            Mueble mueble = MuebleController.searchMuebleById(Convert.ToInt32(Session["idMuebleToEdit"]));
-
-            var savePath = @"D:\Programming\shcool\web\oficinas_y_mas\assets\images\muebles\";
-            if (FileUpload.HasFile)
-            {
-                string extension = System.IO.Path.GetExtension(FileUpload.FileName);
-
-                if (extension == ".jpg" || extension == ".png")
-                {
-                    if (extension == ".jpg")
-                    {
-                        var fileName = mueble.idMueble + ".jpg";
-                        savePath += fileName;
-                        FileUpload.SaveAs(savePath);
-                        mueble.image = mueble.idMueble + ".jpg";
-
-                    }
-                    if (extension == ".png")
-                    {
-                        var fileName = mueble.idMueble + ".png";
-                        savePath += fileName;
-                        FileUpload.SaveAs(savePath);
-                        mueble.image = mueble.idMueble + ".png";
-                    }
-                    MuebleController.updateMueble(mueble);
-                    Page_Load(null,null);
-                }
-                else
-                {
-                    lblWarning.InnerText = "Archivo no válido. Seleccione archivos con extensión .jpg o .png";
-                    lblWarning.Visible = true;
-                }
-            }
         }
     }
 }
