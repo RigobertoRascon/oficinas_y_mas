@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-sm-12">
-            
+
             <div class="white-box">
                 <h3 class="box-title">Productos</h3>
                 <asp:Button Text="Agregar" ID="btnInsert" OnClick="btnInsert_Click" CssClass="btn btn-success right" runat="server" />
@@ -27,6 +27,26 @@
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar articulo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Seguro que deseas eliminar este articulo?</p>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button Text="Confirmar" runat="server" CssClass="btn btn-primary" ID="btnConfirm" OnClick="btnConfirm_Click"    />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
