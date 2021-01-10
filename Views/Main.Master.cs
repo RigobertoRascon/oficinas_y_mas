@@ -6,6 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Model;
 using Controller;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.xml;
+using System.IO;
+using iTextSharp.tool.xml;
 
 namespace oficinas_y_mas.Views
 {

@@ -63,6 +63,10 @@ namespace oficinas_y_mas.Views
                 {
                     user.correo = txtEmail.Text;
                 }
+                if (!string.IsNullOrEmpty(txtPassword.Text))
+                {
+                    user.password = txtPassword.Text;
+                }
                 user.area = userArea.SelectedValue;
                 user.rol = Convert.ToInt32(userRole.SelectedValue);
                 PersonalController.editUser(user);
