@@ -28,8 +28,11 @@ namespace oficinas_y_mas.Views
                     txtPhone.Attributes.Add("placeholder", user.telefono);
                     txtEmail.Attributes.Add("placeholder", user.correo);
                     txtPassword.Attributes.Add("placeholder", user.password);
-                    userArea.SelectedValue = user.area.ToString();
-                    userRole.SelectedValue = user.rol.ToString();
+                    if (!Page.IsPostBack)
+                    {
+                        userArea.Text = user.area.ToString();
+                        userRole.Text = user.rol.ToString();
+                    }
                 }
             }
 			catch (Exception ex)
@@ -60,10 +63,9 @@ namespace oficinas_y_mas.Views
                 {
                     user.correo = txtEmail.Text;
                 }
-                user.area = "Administracion";
-                user.rol = 1;
+                user.area = userArea.SelectedValue;
+                user.rol = Convert.ToInt32(userRole.SelectedValue);
                 PersonalController.editUser(user);
-                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Modificacion realizada');", true);
                 Response.Redirect("Users.aspx");
             }
             catch (Exception ex)

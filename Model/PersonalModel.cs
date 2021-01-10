@@ -163,6 +163,8 @@ namespace Model
 					user.correo = modifiedUser.correo;
 					user.password = modifiedUser.password;
 					user.telefono = modifiedUser.telefono;
+					user.rol = modifiedUser.rol;
+					user.area = modifiedUser.area;
 					model.SaveChanges();
 				}
 			}
