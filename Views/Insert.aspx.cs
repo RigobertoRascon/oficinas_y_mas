@@ -27,7 +27,6 @@ namespace oficinas_y_mas.Views
                 user.telefono = txtPhone.Text;
                 user.correo = txtEmail.Text;                
                 user.password = txtPassword.Text;
-
                 user.area = userArea.SelectedValue;
                 user.rol = Convert.ToInt32(userRole.SelectedValue);
                 

@@ -44,8 +44,8 @@
                             <br />
                             <asp:DropDownList ID="userArea" runat="server" CssClass="form-control form-control-line">
                                 <asp:ListItem Enabled="true" Text="Selecciona el Area" value="0"></asp:ListItem>
-                                <asp:ListItem Text="Administracion" Value="0"></asp:ListItem>
-                                <asp:ListItem Text="Ventas" Value="1"></asp:ListItem>
+                                <asp:ListItem Text="Administracion" Value="Administracion"></asp:ListItem>
+                                <asp:ListItem Text="Ventas" Value="Ventas"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
