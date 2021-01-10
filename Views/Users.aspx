@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="Users.aspx.cs" Inherits="oficinas_y_mas.Views.Users" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="Users.aspx.cs" Inherits="oficinas_y_mas.Views.Users"  %>
 
 <%@ Import Namespace="Model" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -20,11 +20,7 @@
                             <asp:BoundField DataField="correo" HeaderText="Correo" InsertVisible="False" ReadOnly="true" />
                             <asp:BoundField DataField="password" HeaderText="Contraseña" InsertVisible="False" ReadOnly="true" />
                             <asp:BoundField DataField="telefono" HeaderText="Telefono" InsertVisible="False" ReadOnly="true" />
-                            <asp:TemplateField HeaderText="Area">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblArea" runat="server" Text='<%# (Convert.ToDecimal(Eval("area")) == 0) ? "Administración" : "Ventas"   %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
+                            <asp:BoundField DataField="area" HeaderText="Area" InsertVisible="False" ReadOnly="true" />
                             <asp:TemplateField HeaderText="Rol">
                                 <ItemTemplate>
                                     <asp:Label ID="lblRol" runat="server" Text='<%# (Convert.ToDecimal(Eval("rol")) == 0) ? "Administrador" : "Usuario"   %>'></asp:Label>
