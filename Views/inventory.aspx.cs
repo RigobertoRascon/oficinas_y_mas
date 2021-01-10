@@ -19,13 +19,13 @@ namespace oficinas_y_mas.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            gvMuebles.DataSource = MuebleController.searchMuebleByCriteria("");
-            gvMuebles.DataBind();
+            BindGrid();
         }
 
         private void BindGrid()
         {
-            
+            gvMuebles.DataSource = MuebleController.searchMuebleByCriteria("");
+            gvMuebles.DataBind();
         }
 
         protected void btnInsert_Click(object sender, EventArgs e)
