@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="inventory.aspx.cs" Inherits="oficinas_y_mas.Views.inventory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="inventory.aspx.cs" Inherits="oficinas_y_mas.Views.inventory" EnableEventValidation = "false"%>
 
 <%@ Import Namespace="Model" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -10,8 +10,10 @@
             <div class="white-box">
                 <h3 class="box-title">Productos</h3>
                 <asp:Button Text="Agregar" ID="btnInsert" OnClick="btnInsert_Click" CssClass="btn btn-success right" runat="server" />
+                <asp:Button Text="Exportar" ID="btnExport" OnClick="btnExport_Click" CssClass="btn btn-primary right" runat="server" />
                 <div class="table-responsive">
-                    <asp:GridView runat="server" ID="gvUsers" AutoGenerateColumns="false" CssClass="table table-bordered dataTable">
+
+                    <asp:GridView runat="server" ID="gvMuebles" AutoGenerateColumns="false" CssClass="table table-bordered dataTable">
                         <Columns>
                             <asp:BoundField DataField="idMueble" HeaderText="ID" InsertVisible="False" ReadOnly="true" />
                             <asp:BoundField DataField="nombre" HeaderText="Nombre" InsertVisible="False" ReadOnly="true" />
