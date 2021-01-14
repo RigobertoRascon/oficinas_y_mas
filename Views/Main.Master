@@ -30,13 +30,13 @@
                 <div class="navbar-header">
                     <div class="top-left-part">
                         <!-- Logo -->
-                        <a class="logo" href="dashboard.html"></b>
+                        <a class="logo" href="inventory"></b>
                         <!-- Logo text image you can use text also -->
                             <span class="hidden-xs">
 
                                 <!--This is light logo text-->
                                 <img height="45px" src="../plugins/images/admin-text-dark.png" alt="home"
-                                    class="light-logo" />
+                                    class="light-logo">
                             </span></a>
                     </div>
                     <!-- /Logo -->

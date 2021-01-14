@@ -65,9 +65,9 @@ namespace oficinas_y_mas.Views
                 }
                 if (!string.IsNullOrEmpty(txtCantidad.Text))
                 {
-                    mueble.cantidad_stock = Convert.ToInt32(txtPrecio.Text);
+                    mueble.cantidad_stock = Convert.ToInt32(txtCantidad.Text);
                 }
-                var savePath = @"D:\Programming\shcool\web\oficinas_y_mas\assets\images\muebles\";
+                var savePath = @"D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\assets\images\muebles\";
                 if (FileUpload.HasFile)
                 {
                     string extension = System.IO.Path.GetExtension(FileUpload.FileName);

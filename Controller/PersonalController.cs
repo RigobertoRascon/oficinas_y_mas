@@ -56,7 +56,7 @@ namespace Controller
 				{
 					throw new Exception("Correo electrónico ya registrado");
 				}
-				else if (PersonalModel.isValidPassword(newUser.password))
+				else if (passwordValidator(newUser.password))
 				{
 					PersonalModel.insertUser(newUser);
 				}
@@ -128,7 +128,22 @@ namespace Controller
 					&& !string.IsNullOrEmpty(modifiedUser.apellido) && !string.IsNullOrEmpty(modifiedUser.area) && !string.IsNullOrEmpty(modifiedUser.telefono) 
 					&& !string.IsNullOrEmpty(modifiedUser.rol.ToString()))
 				{
-					PersonalModel.editUser(modifiedUser);
+                    if (modifiedUser.password.Length >= 8)
+                    {
+						if (passwordValidator(modifiedUser.password))
+						{
+							PersonalModel.editUser(modifiedUser);
+                        }
+                        else
+                        {
+							throw new Exception("Contraseña Invalida");
+						}
+                    }
+                    else
+                    {
+						throw new Exception("Contraseña debe contener al menos 8 caracteres");
+					}
+					
 				}
 				else
 				{
@@ -137,7 +152,7 @@ namespace Controller
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Hubo un error en la capa del Modelo: " + ex.Message.ToString());
+				throw new Exception(ex.Message.ToString());
 			}
 		}
 
@@ -155,6 +170,65 @@ namespace Controller
 
 				throw ex;
 			}
+		}
+
+		public static bool passwordValidator(string password)
+        {			
+			char[] charPassword = password.ToCharArray();
+			int symbolCount = 0;
+			int lowerLetterCount = 0;
+			int numberCount = 0;
+			int upperLetterCount = 0;
+			
+			List<char> upperLetters = new List<char>()
+			{
+				'A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ',
+				'O','P','Q','R','S','T','U','V','W','X','Y','Z'
+			};
+			List<char> lowerLetters = new List<char>()
+			{
+				'a','b','c','d','e','f','g','h','i','j','k','l','m','n',
+				'ñ','o','p','q','r','s','t','u','v','w','x','y','z'
+			};
+			List<char> numbers = new List<char>()
+			{
+				'0','1','2','3','4','5','6','7','8','9'
+			};
+			List<char> symbols = new List<char>()
+			{
+				'`','~','!','@','#','$','%','^','&','*',
+				'(',')','-','_','=','+','[',']','{','}',
+				';',':','"','<','.','>','/','?','\'','|'
+			};
+            for (int i = 0; i < charPassword.Length; i++)
+            {
+                if (lowerLetters.Contains(charPassword[i]))
+                {
+					lowerLetterCount = lowerLetterCount + 1;
+				}
+                if (numbers.Contains(charPassword[i]))
+                {
+					numberCount = numberCount + 1;
+				}
+                if (symbols.Contains(charPassword[i]))
+                {
+					symbolCount = symbolCount + 1;
+                }
+                if (upperLetters.Contains(charPassword[i]))
+                {
+					upperLetterCount = upperLetterCount + 1;
+                }
+            }
+			int passwordCharCount = lowerLetterCount + numberCount + symbolCount + upperLetterCount;
+			if (passwordCharCount == charPassword.Length && lowerLetterCount > 0
+				&& numberCount > 0 && symbolCount > 0 && upperLetterCount > 0)
+            {
+				return true;
+            }
+            else
+            {
+				return false;
+            }
 		}
 	}
 }

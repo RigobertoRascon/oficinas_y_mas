@@ -20,12 +20,19 @@ namespace Controller
 				}
 				else
 				{
-					MuebleModel.insertMueble(newMueble);
+                    if (newMueble.precio <= 0 || newMueble.cantidad_stock < 0)
+                    {
+						throw new Exception("Cantidad Invalida");
+                    }
+                    else
+                    {
+						MuebleModel.insertMueble(newMueble);
+					}
+					
 				}
 			}
 			catch (Exception ex)
 			{
-
 				throw ex;
 			}
 		}

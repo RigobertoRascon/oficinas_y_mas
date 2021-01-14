@@ -9,3 +9,15 @@ D:\Programming\shcool\web\oficinas_y_mas\Model\obj\Debug\Model.csprojAssemblyRef
 D:\Programming\shcool\web\oficinas_y_mas\Model\obj\Debug\Model.csproj.CopyComplete
 D:\Programming\shcool\web\oficinas_y_mas\Model\obj\Debug\Model.dll
 D:\Programming\shcool\web\oficinas_y_mas\Model\obj\Debug\Model.pdb
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\bin\Debug\Model.dll.config
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\bin\Debug\Model.dll
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\bin\Debug\Model.pdb
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\bin\Debug\EntityFramework.dll
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\bin\Debug\EntityFramework.xml
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\obj\Debug\Model.dll
+D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Model\obj\Debug\Model.pdb

@@ -5,10 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="3c7a85663a9c4ce3879113e07e6c8cbe" Name="Diagram1">
-        <EntityTypeShape EntityType="oficinasymasModel.Almacen" Width="1.5" PointX="1.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="oficinasymasModel.Almacen" Width="2.125" PointX="3.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="oficinasymasModel.Cliente" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="oficinasymasModel.Entrega" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="oficinasymasModel.Mueble" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oficinasymasModel.Mueble" Width="1.5" PointX="1.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="oficinasymasModel.Pedido" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="oficinasymasModel.Personal" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
         <AssociationConnector Association="oficinasymasModel.FK__Mueble__idAlmace__4BAC3F29" ManuallyRouted="false" />
