@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -77,6 +78,29 @@ namespace Model
 						 || mueble.color.Contains(criteria) || mueble.categoria.Contains(criteria))).ToList();
 					return result;
 				}
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+		}
+
+		public static List<Mueble> searchMuebleByMultipleId(List<int> muebleList)
+		{
+			try
+			{
+				using (var model = new oficinasymasEntities())
+				{
+					foreach (var item in muebleList)
+					{
+						List<Mueble> result = model.Muebles.Where(mueble => (mueble.idMueble == item)).ToList();
+						return result;
+						
+					}
+					return null;
+				}
+				
 			}
 			catch (Exception ex)
 			{

@@ -78,7 +78,20 @@ namespace oficinas_y_mas.Views
         protected global::System.Web.UI.WebControls.LinkButton linkInventory;
 
         /// <summary>
+<<<<<<< HEAD
+        /// Control linkVenta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton linkVenta;
+
+        /// <summary>
+        /// Control titleDate.
+=======
         /// titleDate control.
+>>>>>>> 27a17cc4a0bf7d64eca0c391f2d2381f9f70cd21
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

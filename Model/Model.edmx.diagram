@@ -18,6 +18,8 @@
         <AssociationConnector Association="oficinasymasModel.FK__Entrega__idPedid__59063A47" ManuallyRouted="false" />
         <AssociationConnector Association="oficinasymasModel.FK__Entrega__idPerso__5812160E" ManuallyRouted="false" />
         <AssociationConnector Association="oficinasymasModel.FK__Pedido__idMueble__5070F446" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="oficinasymasModel.Venta" Width="1.5" PointX="3" PointY="1.5" />
+        <AssociationConnector Association="oficinasymasModel.FK__Venta__idMueble__02FC7413" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

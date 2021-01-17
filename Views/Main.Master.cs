@@ -60,5 +60,10 @@ namespace oficinas_y_mas.Views
         {
             Response.Redirect("inventory.aspx");
         }
+
+        protected void linkVenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("venta.aspx");
+        }
     }
 }

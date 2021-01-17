@@ -31,5 +31,6 @@ namespace Model
         public virtual DbSet<Mueble> Muebles { get; set; }
         public virtual DbSet<Pedido> Pedidoes { get; set; }
         public virtual DbSet<Personal> Personals { get; set; }
+        public virtual DbSet<Venta> Ventas { get; set; }
     }
 }

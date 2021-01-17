@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -72,6 +73,19 @@ namespace Controller
 			}
 		}
 
+		public static List<Mueble> searchMuebleByMultipleId(List<int> idMueble)
+		{
+			try
+			{
+				return MuebleModel.searchMuebleByMultipleId(idMueble);
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+		}
+
 		public static List<Mueble> searchMuebleByCriteria(string criteria)
 		{
 			try
@@ -84,6 +98,8 @@ namespace Controller
 				throw ex;
 			}
 		}
+
+
 
 		public static void removeMueble(int id_mueble_to_remove)
 		{

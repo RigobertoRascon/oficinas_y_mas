@@ -68,6 +68,15 @@
     <Property Name="password" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="apellido" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="idVenta" />
+    </Key>
+    <Property Name="idVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idMueble" Type="int" Nullable="false" />
+    <Property Name="monto" Type="float" />
+    <Property Name="fecha" Type="varchar" MaxLength="20" />
+  </EntityType>
   <Association Name="FK__Entrega__idClien__571DF1D5">
     <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
     <End Role="Entrega" Type="Self.Entrega" Multiplicity="*" />
@@ -152,6 +161,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Venta__idMueble__02FC7413">
+    <End Role="Mueble" Type="Self.Mueble" Multiplicity="1" />
+    <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mueble">
+        <PropertyRef Name="idMueble" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="idMueble" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="oficinasymasModelStoreContainer">
     <EntitySet Name="Almacen" EntityType="Self.Almacen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
@@ -159,6 +180,7 @@
     <EntitySet Name="Mueble" EntityType="Self.Mueble" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Personal" EntityType="Self.Personal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Entrega__idClien__571DF1D5" Association="Self.FK__Entrega__idClien__571DF1D5">
       <End Role="Cliente" EntitySet="Cliente" />
       <End Role="Entrega" EntitySet="Entrega" />
@@ -186,6 +208,10 @@
     <AssociationSet Name="FK__Pedido__idMueble__5070F446" Association="Self.FK__Pedido__idMueble__5070F446">
       <End Role="Mueble" EntitySet="Mueble" />
       <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta__idMueble__02FC7413" Association="Self.FK__Venta__idMueble__02FC7413">
+      <End Role="Mueble" EntitySet="Mueble" />
+      <End Role="Venta" EntitySet="Venta" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

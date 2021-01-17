@@ -80,6 +80,9 @@
                         <li>
                             <asp:LinkButton Text="Inventario" ID="linkInventory" runat="server" CssClass="waves-effect" OnClick="linkInventory_Click" />
                         </li>
+                        <li>
+                            <asp:LinkButton Text="Venta" ID="linkVenta" runat="server" CssClass="waves-effect" OnClick="linkVenta_Click" />
+                        </li>
                     </ul>
                 </div>
             </div>

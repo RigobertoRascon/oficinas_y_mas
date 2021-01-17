@@ -53,6 +53,7 @@
     <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="cantidad_stock" Type="Int32" Nullable="false" />
     <Property Name="categoria" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Ventas" Relationship="oficinasymasModel.FK__Venta__idMueble__02FC7413" FromRole="Mueble" ToRole="Venta" />
   </EntityType>
   <EntityType Name="Pedido">
     <Key>
@@ -201,5 +202,32 @@
       <End Role="Mueble" EntitySet="Muebles" />
       <End Role="Pedido" EntitySet="Pedidoes" />
     </AssociationSet>
+    <EntitySet Name="Ventas" EntityType="oficinasymasModel.Venta" />
+    <AssociationSet Name="FK__Venta__idMueble__02FC7413" Association="oficinasymasModel.FK__Venta__idMueble__02FC7413">
+      <End Role="Mueble" EntitySet="Muebles" />
+      <End Role="Venta" EntitySet="Ventas" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="idVenta" />
+    </Key>
+    <Property Name="idVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idMueble" Type="Int32" Nullable="false" />
+    <Property Name="monto" Type="Double" />
+    <NavigationProperty Name="Mueble" Relationship="oficinasymasModel.FK__Venta__idMueble__02FC7413" FromRole="Venta" ToRole="Mueble" />
+    <Property Name="fecha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Venta__idMueble__02FC7413">
+    <End Type="oficinasymasModel.Mueble" Role="Mueble" Multiplicity="1" />
+    <End Type="oficinasymasModel.Venta" Role="Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mueble">
+        <PropertyRef Name="idMueble" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="idMueble" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

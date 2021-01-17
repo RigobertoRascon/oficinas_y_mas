@@ -19,6 +19,7 @@ namespace Model
         {
             this.Entregas = new HashSet<Entrega>();
             this.Pedidoes = new HashSet<Pedido>();
+            this.Ventas = new HashSet<Venta>();
         }
     
         public int idMueble { get; set; }
@@ -35,5 +36,7 @@ namespace Model
         public virtual ICollection<Entrega> Entregas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedidoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Venta> Ventas { get; set; }
     }
 }
