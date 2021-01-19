@@ -30,7 +30,7 @@
                 <div class="navbar-header">
                     <div class="top-left-part">
                         <!-- Logo -->
-                        <a class="logo" href="inventory"></b>
+                        <a class="logo" href="inventory">
                         <!-- Logo text image you can use text also -->
                             <span class="hidden-xs">
 

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="venta.aspx.cs" Inherits="oficinas_y_mas.Views.venta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeFile="~/Views/venta.aspx.cs" Inherits="oficinas_y_mas.Views.venta" %>
+<%@ Import Namespace="Model" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,8 +22,13 @@
                             <asp:BoundField DataField="precio" DataFormatString="${0}" HeaderText="Precio" InsertVisible="False" ReadOnly="true" />
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:TextBox runat="server" ID="txtCantidad" type="number"  min="0" value="1"/>
+                                    <asp:TextBox runat="server" ID="txtCantidad" type="number" CssClass="form-control"  min="1" 
+                                        max="<%# ((Mueble)(Container.DataItem)).cantidad_stock %>" value="1" Text="1" 
+                                        OnTextChanged="txtCantidad_TextChanged" AutoPostBack="true"/>
                                 </ItemTemplate>
+                                <HeaderTemplate>
+                                    Cantidad
+                                </HeaderTemplate>
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView>

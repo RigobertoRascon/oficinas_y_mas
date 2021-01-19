@@ -53,16 +53,20 @@ namespace oficinas_y_mas.Views
 
         protected void linkUsers_Click(object sender, EventArgs e)
         {
+            Session["idList"] = null;
             Response.Redirect("users.aspx");
+            
         }
 
         protected void linkInventory_Click(object sender, EventArgs e)
         {
+            Session["idList"] = null;
             Response.Redirect("inventory.aspx");
         }
 
         protected void linkVenta_Click(object sender, EventArgs e)
         {
+            Session["idList"] = null;
             Response.Redirect("venta.aspx");
         }
     }
