@@ -30,7 +30,22 @@ namespace oficinas_y_mas.Views
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             var idMuebleToSell = txtSearch.Text;
-            
+            if (!idMuebleToSell.All(char.IsDigit))
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Codigo invalido');", true);
+                return;
+            }
+            var mueble = MuebleController.searchMuebleById(Convert.ToInt32(idMuebleToSell));
+            if (mueble == null)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Producto inexistente');", true);
+                return;
+            }
+            if (mueble.cantidad_stock == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Producto no disponible en stock');", true);
+                return;
+            }
             idList.Add(Convert.ToInt32(idMuebleToSell));
             Session["idList"] = idList;
             List<string> cantidades = new List<string>();
