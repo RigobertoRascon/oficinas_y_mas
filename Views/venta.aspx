@@ -24,7 +24,7 @@
                                 <ItemTemplate>
                                     <asp:TextBox runat="server" ID="txtCantidad" type="number" CssClass="form-control"  min="1" 
                                         max="<%# ((Mueble)(Container.DataItem)).cantidad_stock %>" value="1" Text="1" 
-                                        OnTextChanged="txtCantidad_TextChanged" AutoPostBack="true"/>
+                                        OnTextChanged="txtCantidad_TextChanged" AutoPostBack="true" onkeydown = "return (event.keyCode!=13)"/>
                                 </ItemTemplate>
                                 <HeaderTemplate>
                                     Cantidad
