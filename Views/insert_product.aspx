@@ -44,9 +44,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Categoria</label>
-                        <div class="col-md-12">
-                            <asp:TextBox runat="server" ID="txtCategoria" CssClass="form-control form-control-line" />
+                        <label class="col-sm-12">Categoria</label>
+                        <div class="col-sm-12">
+                            <br />
+                            <asp:DropDownList ID="txtCategory" runat="server" CssClass="form-control form-control-line">
+                                <asp:ListItem Enabled="true" Text="Categoria" value="0"></asp:ListItem>
+                                <asp:ListItem Text="Oficina" Value="Oficina"></asp:ListItem>
+                                <asp:ListItem Text="Gaming" Value="Gaming"></asp:ListItem>
+                                <asp:ListItem Text="Hogar" Value="Hogar"></asp:ListItem>
+                            </asp:DropDownList>
                         </div>
                     </div>
                     <div class="form-group">

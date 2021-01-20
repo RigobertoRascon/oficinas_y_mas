@@ -21,11 +21,24 @@ namespace Controller
 				}
 				else
 				{
-                    if (newMueble.precio <= 0 || newMueble.cantidad_stock < 0)
+                    
+                    if (newMueble.nombre.Length < 4)
                     {
-						throw new Exception("Cantidad Invalida");
+						throw new Exception("La longitud de caracteres del nombre es muy corta");
                     }
-                    else
+					if (newMueble.color.Length < 4)
+					{
+						throw new Exception("La longitud de caracteres del nombre es muy corta");
+					}
+					if (newMueble.precio < 0)
+					{
+						throw new Exception("El precio no puede ser negativo");
+					}
+					if (newMueble.cantidad_stock < 0)
+					{
+						throw new Exception("Cantidad de stock Invalida");
+					}
+					else
                     {
 						MuebleModel.insertMueble(newMueble);
 					}
@@ -43,14 +56,30 @@ namespace Controller
 			try
 			{
 
-				if ( muebleToUpdate.idMueble > 0 && !string.IsNullOrEmpty(muebleToUpdate.nombre) && !string.IsNullOrEmpty(muebleToUpdate.color) && !string.IsNullOrEmpty(muebleToUpdate.precio.ToString())
-				&& !string.IsNullOrEmpty(muebleToUpdate.cantidad_stock.ToString()) )
+				if ( muebleToUpdate.idMueble < 0 || string.IsNullOrEmpty(muebleToUpdate.nombre) || string.IsNullOrEmpty(muebleToUpdate.color) || string.IsNullOrEmpty(muebleToUpdate.precio.ToString())
+				|| string.IsNullOrEmpty(muebleToUpdate.cantidad_stock.ToString()) )
 				{
-					MuebleModel.updateMueble(muebleToUpdate);
+					throw new Exception("Introduzca todos los campos");
+				}
+				if (muebleToUpdate.nombre.Length < 4)
+				{
+					throw new Exception("La longitud de caracteres del nombre es muy corta");
+				}
+				if (muebleToUpdate.color.Length < 4)
+				{
+					throw new Exception("La longitud de caracteres del nombre es muy corta");
+				}
+				if (muebleToUpdate.precio < 0)
+				{
+					throw new Exception("El precio no puede ser negativo");
+				}
+				if (muebleToUpdate.cantidad_stock < 0)
+				{
+					throw new Exception("Cantidad de stock Invalida");
 				}
 				else
 				{
-					throw new Exception("Faltan campos");
+					MuebleModel.updateMueble(muebleToUpdate);
 				}
 			}
 			catch (Exception ex)

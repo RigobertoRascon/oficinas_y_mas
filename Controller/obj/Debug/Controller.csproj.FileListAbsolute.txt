@@ -1,15 +1,3 @@
-D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Controller.dll.config
-D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Controller.dll
-D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Controller.pdb
-D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Model.dll
-D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\EntityFramework.dll
-D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Model.pdb
-D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Model.dll.config
-D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\EntityFramework.xml
-D:\Programming\shcool\web\oficinas_y_mas\Controller\obj\Debug\Controller.csprojAssemblyReference.cache
-D:\Programming\shcool\web\oficinas_y_mas\Controller\obj\Debug\Controller.csproj.CopyComplete
-D:\Programming\shcool\web\oficinas_y_mas\Controller\obj\Debug\Controller.dll
-D:\Programming\shcool\web\oficinas_y_mas\Controller\obj\Debug\Controller.pdb
 D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Controller\bin\Debug\Controller.dll.config
 D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Controller\bin\Debug\Controller.dll
 D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Controller\bin\Debug\Controller.pdb
@@ -23,3 +11,16 @@ D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Controller
 D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Controller\obj\Debug\Controller.csproj.CopyComplete
 D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Controller\obj\Debug\Controller.dll
 D:\Downloads\ITH\7\Desarrollo de Proyectos de Software\oficinas_y_mas\Controller\obj\Debug\Controller.pdb
+D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Controller.dll.config
+D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Controller.dll
+D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Controller.pdb
+D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Model.dll
+D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\EntityFramework.dll
+D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Model.pdb
+D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\Model.dll.config
+D:\Programming\shcool\web\oficinas_y_mas\Controller\bin\Debug\EntityFramework.xml
+D:\Programming\shcool\web\oficinas_y_mas\Controller\obj\Debug\Controller.csprojAssemblyReference.cache
+D:\Programming\shcool\web\oficinas_y_mas\Controller\obj\Debug\Controller.csproj.CopyComplete
+D:\Programming\shcool\web\oficinas_y_mas\Controller\obj\Debug\Controller.dll
+D:\Programming\shcool\web\oficinas_y_mas\Controller\obj\Debug\Controller.pdb
+D:\Programming\shcool\web\oficinas_y_mas\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache

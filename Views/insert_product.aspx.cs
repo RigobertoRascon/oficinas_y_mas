@@ -26,10 +26,9 @@ namespace oficinas_y_mas.Views
             try
             {
                 Mueble mueble = new Mueble();
-
                 mueble.nombre = txtName.Text;
                 mueble.color = txtColor.Text;
-                mueble.categoria = txtCategoria.Text;
+                mueble.categoria = txtCategory.SelectedValue;
                 mueble.precio = Convert.ToInt32(txtPrecio.Text);
                 mueble.cantidad_stock = Convert.ToInt32(txtCantidad.Text);
                 mueble.idAlmacen = 1;

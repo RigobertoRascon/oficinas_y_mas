@@ -27,7 +27,6 @@ namespace oficinas_y_mas.Views
                     Mueble mueble = MuebleController.searchMuebleById(Convert.ToInt32(idMuebleToEdit));
                     txtName.Attributes.Add("placeholder", mueble.nombre);
                     txtColor.Attributes.Add("placeholder", mueble.color);
-                    txtCategoria.Attributes.Add("placeholder", mueble.categoria);
                     txtAlmacen.Attributes.Add("placeholder", "Almacen 1");
                     txtPrecio.Attributes.Add("placeholder", mueble.precio.ToString());
                     txtCantidad.Attributes.Add("placeholder", mueble.cantidad_stock.ToString());
@@ -55,9 +54,9 @@ namespace oficinas_y_mas.Views
                 {
                     mueble.color = txtColor.Text;
                 }
-                if (!string.IsNullOrEmpty(txtCategoria.Text))
+                if (!string.IsNullOrEmpty(txtCategory.SelectedValue))
                 {
-                    mueble.categoria = txtCategoria.Text;
+                    mueble.categoria = txtCategory.SelectedValue;
                 }
                 if (!string.IsNullOrEmpty(txtPrecio.Text))
                 {
